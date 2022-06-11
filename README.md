@@ -14,5 +14,5 @@ docker run \
   -e CF_API_KEY=<YOUR CLOUDFLARE API KEY> \ 
   -e EMAIL=<YOUR EMAIL ADDRESS> \
   --rm \
-  ghcr.io/tpaulus/le-edge-cert-uploader:latest
+  ghcr.io/tpaulus/le-edge-cert-uploader:main
 ```
