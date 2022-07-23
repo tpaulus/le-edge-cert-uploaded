@@ -49,7 +49,7 @@ if [ "$id" != "null" ]; then
   curl -X PATCH "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/custom_certificates/${id}" \
        -H "Content-Type:application/json" \
        -H "Authorization: Bearer ${CF_API_KEY}" \
-       --data "{\"certificate\": \"$(awk -v ORS='\\n' '1' ${cert_path}fullchain.pem)\", \"private_key\": \"$(awk -v ORS='\\n' '1' ${cert_path}privkey.pem)\", \"type\": \"bundle_method\": \"force\"}" | jq .
+       --data "{\"certificate\": \"$(awk -v ORS='\\n' '1' ${cert_path}fullchain.pem)\", \"private_key\": \"$(awk -v ORS='\\n' '1' ${cert_path}privkey.pem)\", \"bundle_method\": \"force\"}" | jq .
 else
   # Create a new Cert
   echo "Creating a new Custom Certificate"
