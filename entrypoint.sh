@@ -43,7 +43,7 @@ cert_path=`ls -d /etc/letsencrypt/live/*/ | head -n 1`
 id=`curl --get "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/custom_certificates" \
      -H "Authorization: Bearer ${CF_API_KEY}" | jq -r .result[0].id`
 
-if [[ "$id" != "null"]]; then
+if [ "$id" != "null" ]; then
   # Update the existing cert
   echo "Updating Custom Certificate with ID: $id"
   curl -X PATCH "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/custom_certificates" \
