@@ -9,10 +9,11 @@ You will need a CloudFlare API Key that is allowed to edit DNS and SSL settings,
 Run via:
 ```shell
 docker run \
-  -e ZONE_ID=<CLOUDFLARE ZONE ID> \
   -e DOMAINS=<DOMAIN LIST COMMA SEPARATED> \
-  -e CF_API_KEY=<YOUR CLOUDFLARE API KEY> \ 
+  -e CF_ZONE_ID=<CLOUDFLARE ZONE ID> \
+  -e CF_API_KEY=<YOUR CLOUDFLARE API KEY> \
   -e EMAIL=<YOUR EMAIL ADDRESS> \
+  --pull=always \
   --rm \
   ghcr.io/tpaulus/le-edge-cert-uploader:main
 ```
