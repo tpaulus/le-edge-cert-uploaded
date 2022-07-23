@@ -1,9 +1,5 @@
 #!/bin/bash
 
-contains() {
-    [[ $1 =~ (^|[[:space:]])$2($|[[:space:]]) ]] && exit(0) || exit(1)
-}
-
 if [ -z ${CF_API_KEY+x} ]; then
   echo "CF API Key is not set. Please set your Cloudflare API Key as the value of CF_API_KEY";
   exit 1;
