@@ -7,7 +7,7 @@ name: Docker
 
 on:
   schedule:
-    - cron: '41 13 * * *'
+    - cron: '41 13 * * 1'
   push:
     branches: [ "main" ]
     # Publish semver tags as releases.
@@ -89,6 +89,7 @@ jobs:
       # https://github.com/sigstore/cosign
       - name: Sign the published Docker image
         if: ${{ github.event_name != 'pull_request' }}
+        continue-on-error: true
         env:
           COSIGN_EXPERIMENTAL: "true"
         # This step uses the identity token to provision an ephemeral certificate
