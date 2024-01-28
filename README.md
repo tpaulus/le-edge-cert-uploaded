@@ -1,10 +1,10 @@
 # Let's Encrypt Edge Cert Uploader
 A docker container that obtains a certificate from Let's Encrypt for a specified set of domains and then uploads it as a
-custom edge certificate to CloudFlare.
+custom edge certificate to Cloudflare.
 
 **Prerequisites:**
 
-You will need a CloudFlare API Key that is allowed to edit DNS and SSL settings, as well as a Business or Enterprise Zone.
+You will need a Cloudflare API Key that is allowed to edit DNS and SSL settings, as well as a Business or Enterprise Zone.
 
 Run via:
 ```shell
